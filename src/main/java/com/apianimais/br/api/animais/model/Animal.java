@@ -1,11 +1,29 @@
 package com.apianimais.br.api.animais.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table
 public class Animal {
 
+    @Id
+    @Column
     private String id;
+
+    @Column
     private String especie;
+
+    @Column
     private String sexo;
+
+    @Column
     private Double idade;
+
+    public Animal(){
+    }
 
     public Animal(String id, String especie, String sexo, Double idade) {
         this.id = id;
@@ -48,11 +66,9 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Animal{" +
-                "id='" + id + '\'' +
+        return  "id='" + id + '\'' +
                 ", especie='" + especie + '\'' +
                 ", sexo='" + sexo + '\'' +
-                ", idade=" + idade +
-                '}';
+                ", idade=" + idade;
     }
 }
